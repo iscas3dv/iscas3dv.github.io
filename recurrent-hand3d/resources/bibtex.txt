@@ -1,0 +1,6 @@
+@inproceedings{Deng2022recurrent,
+      title={Recurrent 3D Hand Pose Estimation Using Cascaded Pose-guided 3D Alignments}, 
+      author={Xiaoming Deng, Dexin Zuo, Yinda Zhang, Zhaopeng Cui, Jian Cheng, Ping Tan, Liang Chang, Marc Pollefeys, Sean Fanello, Hongan Wang}, 
+      booktitle={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
+      year={2022}
+} 

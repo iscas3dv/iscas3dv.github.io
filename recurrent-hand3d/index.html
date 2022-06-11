@@ -1,0 +1,309 @@
+<html>
+
+<head>
+    <link rel="StyleSheet" href="style.css" type="text/css" media="all">
+    <title>Recurrent 3D Hand Pose Estimation Using Cascaded Pose-guided 3D Alignments</title>
+    <meta property="og:title" content="Recurrent 3D Hand Pose Estimation Using Cascaded Pose-guided 3D Alignments">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+<body>
+    <br>
+    <div class="center-div">
+        <span style="font-size:40px">Recurrent 3D Hand Pose Estimation Using Cascaded Pose-guided 3D Alignments</span>
+    </div>
+
+    <br>
+    <table align="center" width="1000px">
+        <tbody>
+            <tr>
+                <td align="center" width="200px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <a href="http://www.idengxm.com/">Xiaoming Deng</a><sup>1,2</sup>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            Dexin Zuo<sup>1,2</sup>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <a href="https://www.zhangyinda.com/">Yinda Zhang</a><sup>3</sup>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="200px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            Zhaopeng Cui<sup>1,2</sup>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            Jian Cheng<sup>1,2</sup>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <a href="https://www2.cs.sfu.ca/~pingtan/">Ping Tan</a><sup>4</sup>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <table align="center" width="800px">
+        <tbody>
+            <tr>
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            Liang Chan<sup>6</sup>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            Marc Pollefeys<sup>5</sup>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            Sean Fanello<sup>3</sup>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            Hongan Wang<sup>1,2</sup>
+                        </span>
+                    </div>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+    <br>
+
+    <table align="center" width="1100px">
+        <tbody>
+            <tr>
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <sup>1</sup><a href="http://www.iscas.ac.cn/">Institute of Software, Chinese Academy of Sciences</a>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <sup>2</sup><a href="https://www.ucas.ac.cn/">University of Chinese Academy of Sciences</a>
+                        </span>
+                    </div>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <table align="center" width="1000px">
+        <tbody>
+            <tr>
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <sup>3</sup><a href="https://www.google.com/">Google</a>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="200px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <sup>4</sup><a href="https://www.sfu.ca/">Simon Fraser University</a>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <sup>5</sup><a href="https://ethz.ch/en.html">ETH Zurich</a>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="250px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <sup>6</sup><a href="https://www.bnu.edu.cn/">Beijing Normal University</a>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <table align="center" width="600px">
+        <tbody>
+            <tr>
+                <td>
+                    <div class="center-div">
+                        <img src="./resources/images/Illustration.jpg" width="800px"></a><br>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="center-div">
+                        <span style="font-size:14px">
+                            Illustration of our cascaded pose-guided 3D alignments and feature extraction in 3D space. Although the point clouds of the same hand pose from different viewpoints (row 1 vs. row 2) and the point clouds of different hand poses (row 1 and row 2 vs. row 3) are quite different, they become similar for palm and finger parts using palm alignment and finger alignment (see col 3 and col 7), respectively. The hand shapes in the fourth and sixth column are only used for a clear illustration of alignment transformations.
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br>
+
+    <hr>
+    <div class="center-div">
+        <h1>Abstract</h1>
+    </div>
+    <p>
+        3D hand pose estimation is a challenging problem in computer vision due to the high degrees-of-freedom of hand
+        articulated motion space and large viewpoint variation. As a consequence, similar poses observed from multiple views can be
+        dramatically different. In order to deal with this issue, view-independent features are required to achieve state-of-the-art performance.
+        In this paper, we investigate the impact of view-independent features on 3D hand pose estimation from a single depth image, and
+        propose a novel recurrent neural network for 3D hand pose estimation, in which a cascaded 3D pose-guided alignment strategy is
+        designed for view-independent feature extraction and a recurrent hand pose module is designed for modeling the dependencies among
+        sequential aligned features for 3D hand pose estimation. In particular, our cascaded pose-guided 3D alignments are performed in 3D
+        space in a coarse-to-fine fashion. First, hand joints are predicted and globally transformed into a canonical reference frame; Second,
+        the palm of the hand is detected and aligned; Third, local transformations are applied to the fingers to refine the final predictions. The
+        proposed recurrent hand pose module for aligned 3D representation can extract recurrent pose-aware features and iteratively refines
+        the estimated hand pose. Our recurrent module could be utilized for both single-view estimation and sequence-based estimation with
+        3D hand pose tracking. Experiments show that our method improves the state-of-the-art by a large margin on popular benchmarks with
+        the simple yet efficient alignment and network architectures.
+    </p>
+    <br><br>
+
+    <hr>
+    <div class="center-div">
+        <h1 id="code">Network Architecture</h1>
+    </div>
+    <table align="center" width="1000px">
+        <tbody>
+            <tr>
+                <td>
+                    <div class="center-div">
+                        <img class="round" style="width:1000" src="./resources/images/pipeline.jpg">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="center-div">
+                        <span style="font-size:14px">
+                            Illustration of our recurrent hand pose network using cascaded pose-guided alignments. 
+                            We first convert the input hand foreground depth to point cloud. 
+                            Then we adopt multiple recurrent iterations to estimate the 3D hand pose. 
+                            Specifically, we introduce several LSTM modules among multiple palm stages to refine the hand pose. 
+                            In each recurrent iteration, we adopt a multi-stage network (i.e. global, palm and finger stages) to 
+                            predict hand joints by iterative pose regression and cascaded pose-guided 3D alignment, 
+                            and we adopt the hand pose of the previous iteration to align the input point cloud of the current iteration. 
+                            “PointNet Encoder” denotes the network before the last multi-layer perception (MLP) of PointNet++.
+                            “<i>A<sub>0,g</sub></i>” is the transformation via the estimated hand pose <i>P<sub>0,global</sub></i> of the global stage in the initial recurrent
+                            iteration, “<i>A<sub>t,p</sub></i>” are the transformations to align each finger via the estimated hand pose of the 
+                            palm stage <i>P<sub>t,palm</sub></i> in the t-th recurrent iteration, and “<i>A<sub>t</sub></i>” is the transformation via the
+                            composited hand pose “<i>P<sub>t</sub></i>” of the palm stage and the finger stage in the t-th recurrent iteration. “⊗” denotes matrix multiplication.
+
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br>
+
+    <hr>
+    <div class="center-div">
+        <h1 id="paper">Paper and Code</h1>
+    </div>
+    <table align="center" width="1000px">
+
+        <tbody>
+            <tr>
+                <td>
+                    <img class="layered-paper-big" style="height:175px" src="./resources/images/page1.jpg">
+                </td>
+                <td>
+                    <span style="font-size:14pt">X. Deng, D. Zuo, Y. Zhang, Z. Cui, J. Cheng, P. Tan,
+                        L. Chang, M. Pollefeys, S. Fanello, H. Wang</span>
+                    <br><br>
+                    <b><span style="display:inline-block;width:800px;font-size:14pt">Recurrent 3D Hand Pose Estimation Using Cascaded Pose-guided 3D Alignments.</span></b>
+                    <br><br>
+                    <span style="font-size:14pt">IEEE TPAMI, 2022.</span>
+                    <br><br>
+                    <span style="font-size:20px">
+                        <a href="./resources/paper.pdf">[Paper]</a> &nbsp; &nbsp;
+                        <a href="./resources/bibtex.txt">[Bibtex]</a> &nbsp; &nbsp; 
+                        <a href="https://github.com/iscas3dv/recurrent-hand3d">[Code]</a> &nbsp; &nbsp;
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br>
+
+    <hr>
+    <table align="center" width="980px">
+        <tbody>
+            <tr>
+                <td>
+                    <left>
+                        <div class="center-div">
+                            <h1>Acknowledgements</h1>
+                        </div>
+                        <div class="center-div">
+                            This work was supported in part by National Natural Science Foundation of China (No. 62076061, No. 61473276, No. 61872346), Beijing Natural Science Foundation (4212029, L182052), and Newton Prize 2019 China Award (NP2PB/100047).
+                            The websiteis modified from this <a href="https://yqdch.github.io/DHSP3D/">template</a>.
+                        </div>
+                    </left>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+
+
+
+</body>
+
+</html>
