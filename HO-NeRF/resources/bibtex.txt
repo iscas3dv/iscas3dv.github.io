@@ -1,0 +1,6 @@
+@inproceedings{quhonerf,
+      title={Novel-view Synthesis and Pose Estimation for Hand-Object Interaction from Sparse Views}, 
+      author={Wentian Qu, Zhaopeng Cui, Yinda Zhang, Chenyu Meng, Cuixia Ma, Xiaoming Deng, Hongan Wang}, 
+      booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision}, 
+      year={2023} 
+} 

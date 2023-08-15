@@ -1,0 +1,390 @@
+<html>
+
+<head>
+    <link rel="StyleSheet" href="style.css" type="text/css" media="all">
+    <title>Novel-view Synthesis and Pose Estimation for Hand-Object Interaction from Sparse Views</title>
+    <meta property="og:title" content="Novel-view Synthesis and Pose Estimation for Hand-Object Interaction from Sparse Views">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+</head>
+
+<body>
+    <br>
+    <div class="center-div">
+        <span style="font-size:40px">Novel-view Synthesis and Pose Estimation for Hand-Object Interaction from Sparse Views</span>
+    </div>
+
+    <br>
+    <table align="center" width="1100px">
+        <tbody>
+            <tr>
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            Wentian Qu<sup>1,2</sup>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <a href="https://zhpcui.github.io/">Zhaopeng Cui</a><sup>3</sup>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <a href="https://www.zhangyinda.com/">Yinda Zhang</a><sup>4</sup>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            Chenyu Meng<sup>1,2</sup>
+                        </span>
+                    </div>
+                </td>
+                
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            Cuixia Ma<sup>1,2</sup>
+                        </span>
+                    </div>
+                </td>
+               
+
+            </tr>
+        </tbody>
+    </table>
+
+
+    <table align="center" width="800px">
+        <tbody>
+                            
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <a href="http://www.idengxm.com/">Xiaoming Deng</a><sup>1,2</sup>*
+                        </span>
+                    </div>
+                </td>
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            Hongan Wang<sup>1,2</sup>*
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+
+    <table align="center" width="1100px">
+        <tbody>
+            <tr>
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <sup>1</sup>Institute of Software, Chinese Academy of Sciences</a>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <sup>2</sup>University of Chinese Academy of Sciences</a>
+                        </span>
+                    </div>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <table align="center" width="1100px">
+        <tbody>
+            <tr>
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <sup>3</sup>State Key Lab of CAD&CG, Zhejiang University</a>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <sup>4</sup>Google</a>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <table align="center" width="600px">
+        <tbody>
+            <tr>
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <img src="./resources/image/tearser.png" width="1100px"></a><br>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:14px">
+                            We propose a neural rendering and pose estimation system for hand-object interaction using sparse view images. 
+                            (a) During offline stage, we learn hand and object models that enable rendering and shape reconstruction. During online 
+                            stage, we initialize the pose from sparse camera views (b), and then conduct online fitting to improve pose estimation, which 
+                            enables photo-realistic free viewpoint rendering (c). Our framework also naturally supports hand object interaction editing.
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br>
+
+    <hr>
+    <div class="center-div">
+        <h1>Abstract</h1>
+    </div>
+    <p>
+        Hand-object interaction understanding and the barely 
+        addressed novel view synthesis are highly desired in the 
+        immersive communication, whereas it is challenging due to 
+        the high deformation of hand and heavy occlusions between 
+        handandobject. Inthispaper, we propose a neural rendering 
+        and pose estimation system for hand-object interaction 
+        from sparse views, which can also enable 3D hand-object 
+        interaction editing. We share the inspiration from recent 
+        scene understanding work that shows a scene specific model
+        built beforehand can significantly improve and unblock vision 
+        tasks especially when inputs are sparse, and extend it 
+        to the dynamic hand-object interaction scenario and propose 
+        to solve the problem in two stages. We first learn 
+        the shape and appearance prior knowledge of hands and 
+        objects separately with the neural representation at the 
+        offline stage. During the online stage, we design a rendering 
+        based joint model fitting framework to understand the 
+        dynamic hand-object interaction with the pre-built hand and 
+        object models as well as interaction priors, which thereby 
+        overcomes penetration and separation issues between hand 
+        and object and also enables novel view synthesis. In order 
+        to get stable contact during the hand-object interaction 
+        process in a sequence, we propose a stable contact loss 
+        to make the contact region to be consistent. Experiments 
+        demonstrate that our method outperforms the state-of-the art 
+        methods.
+    </p>
+    <br><br>
+
+    <hr>
+    <div class="center-div">
+        <h1 id="code">Overview</h1>
+    </div>
+
+    <p>
+        Given sparse-view observations of hand-object interaction, 
+        we aim to generate free-viewpoint synthesis of the scene and 
+        estimate hand skeleton pose and object 6D pose. Our framework 
+        is divided into two stages: offline model building and online model fitting. 
+    </p>
+
+    <table align="center" width="1000px">
+        <tbody>
+            <tr>
+                <td>
+                    <div class="center-div">
+                        <img class="round" style="width:1000" src="./resources/image/offline_stage.png">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="center-div">
+                        <span style="font-size:14px">
+                            Offline stage to learn hand and object models. Top: Hand model. 
+                            Each sampling point on the ray is converted to the local coordinate 
+                            system of each hand part through bone transformation. Then we encode
+                            the point into embedding vectors and feed it to hand model to get the 
+                            SDF and color value. Bottom: Object model. We convert the sampling 
+                            point to the model coordinate with the object pose, and get the SDF 
+                            and color value. 
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table align="center" width="1000px">
+        <tbody>
+            <tr>
+                <td>
+                    <div class="center-div">
+                        <img class="round" style="width:1000" src="./resources/image/online_stage.png">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="center-div">
+                        <span style="font-size:14px">
+                            Online stage for joint model fitting. We utilize hand/object pose 
+                            estimation networks for initialization, and refine pose with
+                            single-frame based loss function for single frame and video-based loss function 
+                            for video sequence. 
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br><br>
+
+    <hr>
+    <div class="center-div">
+        <h1 id="paper">Paper and Code</h1>
+    </div>
+    <table align="center" width="900px">
+
+        <tbody>
+            <tr>
+                <td>
+                    <img class="layered-paper-big" style="height:175px" src="./resources/image/paper1.png">
+                </td>
+                <td>
+                    <span style="font-size:14pt">W. Qu, Z. Cui, Y. Zhang, C. Meng, C. Ma, X. Deng, H. Wang</span>
+                    <br><br>
+                    <b><span style="display:inline-block;width:600px;font-size:14pt">Novel-view Synthesis and Pose Estimation for Hand-Object Interaction from Sparse Views.</span></b>
+                    <br><br>
+                    <span style="font-size:14pt">ICCV, 2023.</span>
+                    <br><br>
+                    <span style="font-size:20px">
+                        <a href="">[Paper]</a> &nbsp; &nbsp;
+                        <a href="./resources/bibtex.txt">[Bibtex]</a> &nbsp; &nbsp; 
+                        <a href="">[Code]</a> &nbsp; &nbsp;
+                        <a href="">[Dataset]</a> &nbsp; &nbsp;
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br>
+
+    <hr>
+    <div class="center-div">
+        <h1 id="code">Results</h1>
+    </div>
+
+    <table align="center" width="1000px">
+        <tbody>
+            <tr>
+                <td>
+                    <div class="center-div">
+                        <img class="round" style="width:1000" src="./resources/image/img_4.png">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="center-div">
+                        <span style="font-size:14px">
+                            Novel view synthesis and reconstruction of hand and hand-object interaction scenes. 
+                            Our models contain realistic appearance and geometry details and can achieve full 360 degree free-viewpoint rendering.
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table align="center" width="1000px">
+        <tbody>
+            <tr>
+                <td>
+                    <div class="center-div">
+                        <img class="round" style="width:1000" src="./resources/image/img_5.png">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="center-div">
+                        <span style="font-size:14px">
+                            (a) Effect of pose optimization in online stage with joint model fitting. Optimization can 
+                            improve the pose accuracy. (b) Effect of interaction loss. Interaction loss can  facilitate 
+                            to achieve reasonable hand-object interaction. (c) Editing of hand-object interaction scenes. 
+                            We can replace the hand, object models and change the poses to get realistic rendering results.
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table align="center" width="1000px">
+        <tbody>
+            <tr>
+                <td>
+                    <div class="center-div">
+                        <img class="round" style="width:1000" src="./resources/image/img_6.png">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="center-div">
+                        <span style="font-size:14px">
+                            Rendering quality comparison on the HandObject dataset. We zoom in the rendering results 
+                            and mark it as 'High' for demonstration. Our method can achieve high-quality rendering results. 
+                            Compared with A-NeRF~\cite{a-nerf} based hand model, our method preserves more realistic details.
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    <br><br>
+    <hr>
+    <table align="center" width="980px">
+        <tbody>
+            <tr>
+                <td>
+                    <left>
+                        <div class="center-div">
+                            <h1>Acknowledgements</h1>
+                        </div>
+                        <div class="center-div">
+                            This work was supported in part by National Key R&D Program of China (2022ZD0117900).
+                            The websiteis modified from this <a href="https://yqdch.github.io/DHSP3D/">template</a>.
+                        </div>
+                    </left>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+
+
+
+</body>
+
+</html>
