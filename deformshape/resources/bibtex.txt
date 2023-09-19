@@ -1,0 +1,8 @@
+@misc{zhang2023selfsupervised,
+      title={Self-supervised Learning of Implicit Shape Representation with Dense Correspondence for Deformable Objects},
+      author={Baowen Zhang and Jiahe Li and Xiaoming Deng and Yinda Zhang and Cuixia Ma and Hongan Wang},
+      year={2023},
+      eprint={2308.12590},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}

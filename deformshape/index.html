@@ -1,0 +1,305 @@
+<html>
+
+<head>
+    <link rel="StyleSheet" href="style.css" type="text/css" media="all">
+    <title>Efficient Virtual View Selection for 3D Hand Pose Estimation</title>
+    <meta property="og:title" content="Efficient Virtual View Selection for 3D Hand Pose Estimation">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+<body>
+    <br>
+    <div class="center-div">
+        <span style="font-size:40px">Self-supervised Learning of Implicit Shape Representation with Dense Correspondence for Deformable Objects
+</span>
+    </div>
+
+    <br>
+    <table align="center" width="900px">
+        <tbody>
+            <tr>
+                <td align="center" width="180px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            Baowen Zhang<sup>1,2</sup>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="180px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            Jiahe Li<sup>1,2</sup>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="200px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <a href="http://www.idengxm.com/">Xiaoming Deng</a><sup>1,2*</sup>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="180px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <a href="https://www.zhangyinda.com/">Yinda Zhang</a><sup>3*</sup>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <table align="center" width="450px">
+        <tbody>
+            <tr>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">Cuixia Ma</span><sup>1,2</sup>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            Hongan Wang<sup>1,2</sup>
+                        </span>
+                    </div>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+    <br>
+
+    <table align="center" width="1100px">
+        <tbody>
+            <tr>
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <sup>1</sup><a href="http://www.iscas.ac.cn/">Institute of Software, Chinese Academy of Sciences</a>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <sup>2</sup><a href="https://www.ucas.ac.cn/">University of Chinese Academy of Sciences</a>
+                        </span>
+                    </div>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <table align="center" width="900px">
+        <tbody>
+            <tr>
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <sup>3</sup><a href="https://www.google.com/">Google</a>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <table align="center" width="600px">
+        <tbody>
+            <tr>
+                <td>
+                    <div class="center-div">
+                        <img src="./resources/images/teaser.png" width="800px"></a><br>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            We present a self-supervised method to learn neural implicit representation for deformable objects with a collection of shapes. Our method can generate shapes by deforming a learned template and get dense correspondence.
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br>
+
+    <hr>
+    <div class="center-div">
+        <h1>Abstract</h1>
+    </div>
+    <p style="font-size:22px;">
+        Learning 3D shape representation with dense correspondence for deformable objects is a fundamental problem
+        in computer vision. Existing approaches often need additional annotations of specific semantic domain, e.g., skeleton poses for human bodies or animals, which require extra
+        annotation effort and suffer from error accumulation, and
+        they are limited to specific domain. In this paper, we propose a novel self-supervised approach to learn neural implicit shape representation for deformable objects, which
+        can represent shapes with a template shape and dense correspondence in 3D. Our method does not require the priors of skeleton and skinning weight, and only requires a
+        collection of shapes represented in signed distance fields. To handle the large deformation, we constrain the learned
+        template shape in the same latent space with the training shapes, design a new formulation of local rigid constraint that enforces rigid transformation in local region
+        and addresses local reflection issue, and present a new hierarchical rigid constraint to reduce the ambiguity due to the joint learning of template shape and correspondences.
+        Extensive experiments show that our model can represent shapes with large deformations. We also show that our shape representation can support two typical applications,
+        such as texture transfer and shape editing, with competitive performance.
+    </p>
+    <br><br>
+
+    <hr>
+    <div class="center-div">
+        <h1 id="code">Illustration of our shape representation network</h1>
+    </div>
+    <table align="center" width="1000px">
+        <tbody>
+            <tr>
+                <td>
+                    <div class="center-div">
+                        <img class="round" style="width:1000px" src="./resources/images/pipeline.png">
+                    </div>
+                </td>
+            </tr>
+<!--            <tr>-->
+<!--                <td>-->
+<!--                    <div class="center-div">-->
+<!--                        <span style="font-size:14px">-->
+<!--                            We first convert a depth image into 3D point clouds,-->
+<!--                            and uniformly set up candidate virtual views -->
+<!--                            on the spherical surface centered in the hand point clouds. -->
+<!--                            Then we calculate the confidence of each candidate virtual views -->
+<!--                            and select high-quality views accordingly.-->
+<!--                            A 3D pose estimation network then predicts the 3D hand pose -->
+<!--                            from views with top-N confidence, and finally fuses the pose -->
+<!--                            with regard to the confidence to achieve accurate 3D hand pose results.-->
+<!--                        </span>-->
+<!--                    </div>-->
+<!--                </td>-->
+<!--            </tr>-->
+        </tbody>
+    </table>
+    <br><br>
+
+    <hr>
+    <div class="center-div">
+        <h1 id="paper">Paper and Code</h1>
+    </div>
+    <table align="center" width="900px">
+
+        <tbody>
+            <tr>
+                <td>
+                    <img class="layered-paper-big" style="height:175px" src="./resources/images/page1.png">
+                </td>
+                <td>
+                    <span style="font-size:14pt">B. Zhang, J. Li, X. Deng, Y. Zhang, C. Ma, H. Wang</span>
+                    <br><br>
+                    <b><span style="display:inline-block;width:600px;font-size:14pt">Self-supervised Learning of Implicit Shape Representation with Dense Correspondence for Deformable Objects.</span></b>
+                    <br><br>
+                    <span style="font-size:14pt">ICCV, 2023.</span>
+                    <br><br>
+                    <span style="font-size:20px">
+                        <a href="https://github.com/iscas3dv/deformshape">[Code]</a>
+                        <a href="https://arxiv.org/abs/2308.12590">[Paper]</a> &nbsp; &nbsp;
+                        <a href="./resources/bibtex.txt">[Bibtex]</a> &nbsp; &nbsp; 
+<!--                        <a href="https://github.com/iscas3dv/handpose-virtualview">[Code]</a> &nbsp; &nbsp;-->
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br>
+
+    <hr>
+    <div class="center-div">
+        <h1 id="code">Results</h1>
+    </div>
+    <div class="center-div">
+	    <table align="center" width="1000px">
+	        <tbody>
+	            <tr>
+                    <td>
+                        <div class="center-div">
+                            <img class="round" align="center" width="1000px" src="./resources/images/main_train_compare.png">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">
+                        <span style="font-size:22px">
+                             Comparison of model representation capability from our method with DIF and 3D-CODED.
+                            Our method outperforms DIF and 3D-CODED by a large margin on the representation capability
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="center-div" >
+                            <img class="round" align="center" width="1000px" src="./resources/images/main_full_compare.png">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">
+                        <span style="font-size:22px">
+                             Comparison of model representation capability from our method with DIF and 3D-CODED. Our method
+                            outperforms DIF and 3D-CODED by a large margin on the representation capability
+
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="center-div">
+                            <img class="round" align="center" width="1000px" src="./resources/images/main_partial_compare.png">
+                        </div>
+                    </td>
+	            </tr>
+                <tr>
+                    <td style="text-align: center;">
+                        <span style="font-size:22px">
+                             Comparison of model representation capability from our method with DIF and 3D-CODED. Our method
+                            outperforms DIF and 3D-CODED by a large margin on the representation capability
+
+                        </span>
+                    </td>
+                </tr>
+	        </tbody>
+	    </table>
+
+    </div>
+    
+    <br><br>
+    <hr>
+    <table align="center" width="980px">
+        <tbody>
+            <tr>
+                <td>
+                    <left>
+                        <div class="center-div">
+                            <h1>Acknowledgements</h1>
+                        </div>
+                        <div class="center-div">
+                            This work was supported in part by National Key R&D Program of China (2022ZD0117900).
+                            The websiteis modified from this <a href="https://yqdch.github.io/DHSP3D/">template</a>.
+                        </div>
+                    </left>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+
+
+
+</body>
+
+</html>
