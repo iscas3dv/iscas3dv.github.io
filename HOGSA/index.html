@@ -15,7 +15,7 @@
         <span style="font-size:40px">HOGSA:Bimanual Hand-Object Interaction Understanding with 3D Gaussian Splatting Based Data Augmentation</span>
     </div>
 
-    <!-- <br>
+    <br>
     <table align="center" width="1100px">
         <tbody>
             <tr>
@@ -30,7 +30,63 @@
                 <td align="center" width="150px">
                     <div class="center-div">
                         <span style="font-size:22px">
-                            <a href="https://zhpcui.github.io/">Zhaopeng Cui</a><sup>3</sup>
+                            Jiahe Li</a><sup>1,2</sup>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            Jian Cheng</a><sup>1,2</sup>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            Jian Shi</a><sup>3,2</sup>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            Chenyu Meng</a><sup>1,2</sup>
+                        </span>
+                    </div>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+
+
+    <table align="center" width="800px">
+        <tbody>
+                
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            Cuixia Ma<sup>1,2</sup>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            Hongan Wang<sup>1,2</sup>*
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <a href="http://www.idengxm.com/">Xiaoming Deng</a><sup>1,2</sup>*
                         </span>
                     </div>
                 </td>
@@ -43,45 +99,8 @@
                     </div>
                 </td>
 
-                <td align="center" width="150px">
-                    <div class="center-div">
-                        <span style="font-size:22px">
-                            Chenyu Meng<sup>1,2</sup>
-                        </span>
-                    </div>
-                </td>
                 
-                <td align="center" width="150px">
-                    <div class="center-div">
-                        <span style="font-size:22px">
-                            Cuixia Ma<sup>1,2</sup>
-                        </span>
-                    </div>
-                </td>
-               
-
-            </tr>
-        </tbody>
-    </table>
-
-
-    <table align="center" width="800px">
-        <tbody>
-                            
-                <td align="center" width="150px">
-                    <div class="center-div">
-                        <span style="font-size:22px">
-                            <a href="http://www.idengxm.com/">Xiaoming Deng</a><sup>1,2</sup>*
-                        </span>
-                    </div>
-                </td>
-                <td align="center" width="150px">
-                    <div class="center-div">
-                        <span style="font-size:22px">
-                            Hongan Wang<sup>1,2</sup>*
-                        </span>
-                    </div>
-                </td>
+                
             </tr>
         </tbody>
     </table>
@@ -116,7 +135,7 @@
                 <td align="center" width="150px">
                     <div class="center-div">
                         <span style="font-size:22px">
-                            <sup>3</sup>State Key Lab of CAD&CG, Zhejiang University</a>
+                            <sup>3</sup>Institute of Automation, Chinese Academy of Sciences</a>
                         </span>
                     </div>
                 </td>
@@ -138,18 +157,19 @@
             <tr>
                 <td align="center" width="150px">
                     <div class="center-div">
-                        <img src="./resources/image/tearser.png" width="1100px"></a><br>
+                        <img src="./resources/image/teaser.png" width="600px"></a><br>
                     </div>
                 </td>
             </tr>
             <tr>
                 <td align="center" width="150px">
                     <div class="center-div">
-                        <span style="font-size:14px">
-                            We propose a neural rendering and pose estimation system for hand-object interaction using sparse view images. 
-                            (a) During offline stage, we learn hand and object models that enable rendering and shape reconstruction. During online 
-                            stage, we initialize the pose from sparse camera views (b), and then conduct online fitting to improve pose estimation, which 
-                            enables photo-realistic free viewpoint rendering (c). Our framework also naturally supports hand object interaction editing.
+                        <span style="font-size:16px">
+                            We propose a new 3DGS-based data augmentation
+                            framework for bimanual hand-object interaction to augment
+                            existing dataset with various hand-object pose and view
+                            points. Our method can improve the performance of the
+                            baselines, and achieve more accurate pose and contact.
                         </span>
                     </div>
                 </td>
@@ -163,43 +183,32 @@
         <h1>Abstract</h1>
     </div>
     <p>
-        Hand-object interaction understanding and the barely 
-        addressed novel view synthesis are highly desired in the 
-        immersive communication, whereas it is challenging due to 
-        the high deformation of hand and heavy occlusions between 
-        handandobject. Inthispaper, we propose a neural rendering 
-        and pose estimation system for hand-object interaction 
-        from sparse views, which can also enable 3D hand-object 
-        interaction editing. We share the inspiration from recent 
-        scene understanding work that shows a scene specific model
-        built beforehand can significantly improve and unblock vision 
-        tasks especially when inputs are sparse, and extend it 
-        to the dynamic hand-object interaction scenario and propose 
-        to solve the problem in two stages. We first learn 
-        the shape and appearance prior knowledge of hands and 
-        objects separately with the neural representation at the 
-        offline stage. During the online stage, we design a rendering 
-        based joint model fitting framework to understand the 
-        dynamic hand-object interaction with the pre-built hand and 
-        object models as well as interaction priors, which thereby 
-        overcomes penetration and separation issues between hand 
-        and object and also enables novel view synthesis. In order 
-        to get stable contact during the hand-object interaction 
-        process in a sequence, we propose a stable contact loss 
-        to make the contact region to be consistent. Experiments 
-        demonstrate that our method outperforms the state-of-the art 
-        methods.
+        Understanding of bimanual hand-object interaction plays an
+        important role in robotics and virtual reality. However, due
+        to significant occlusions between hands and object as well
+        as the high degree-of-freedom motions, it is challenging
+        to collect and annotate a high-quality, large-scale dataset,
+        which prevents further improvement of bimanual hand-object
+        interaction-related baselines. In this work, we propose a new
+        3D Gaussian Splatting based data augmentation framework
+        for bimanual hand-object interaction, which is capable of
+        augmenting existing dataset to large-scale photorealistic data
+        with various hand-object pose and viewpoints. First, we use
+        mesh-based 3DGS to model objects and hands, and to deal
+        with the rendering blur problem due to multi-resolution input
+        images used, we design a super-resolution module. Second,
+        we extend the single hand grasping pose optimization mod
+        ule for the bimanual hand object to generate various poses
+        of bimanual hand-object interaction, which can significantly
+        expand the pose distribution of the dataset. Third, we con
+        duct an analysis for the impact of different aspects of the pro
+        posed data augmentation on the understanding of the biman
+        ual hand-object interaction. We perform our data augmenta
+        tion on two benchmarks, H2O and Arctic, and verify that our
+        method can improve the performance of the baselines.
     </p>
     <br><br>
 
-    <hr>
-    <div class="center-div">
-        <h1>Video</h1>
-    </div>
-    <div class="center-div">
-    <iframe src="https://player.bilibili.com/player.html?aid=914990670&bvid=BV19u4y1v7ft&cid=1238626071&p=1" width="1000px" height="600px" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-    </div>
-    <br><br>
 
     <hr>
     <div class="center-div">
@@ -207,10 +216,25 @@
     </div>
 
     <p>
-        Given sparse-view observations of hand-object interaction, 
-        we aim to generate free-viewpoint synthesis of the scene and 
-        estimate hand skeleton pose and object 6D pose. Our framework 
-        is divided into two stages: offline model building and online model fitting. 
+        we propose a 3DGS-based data aug
+        mentation framework Hand-Object Gaussian Splatting
+        Augmentation (HOGSA) for bimanual hand-object inter
+        action understanding. First, we use mesh-based 3DGS to
+        model the hand and object based on the hand-object inter
+        action images, which can efficiently synthesize interaction
+        images with the input hand-object pose and viewpoints. Sec
+        ond, in order to enhance the pose diversity of the dataset, we
+        use the pose optimization module to generate diverse poses
+        of two hands and object to drive the hand-object Gaussian
+        splatting model to render images of novel interaction poses.
+        Third, in order to ensure the realism of the rendered im
+        ages, we design the super-resolution module to improve the
+        rendering quality of the coarse images generated by 3DGS.
+        Finally, we combine our augmented dataset with the orig
+        inal dataset to refine the baseline of bimanual hand-object
+        interaction, and conduct a systematic analysis of different
+        aspects that affect interaction understanding accuracy in the
+        augmented dataset. 
     </p>
 
     <table align="center" width="1000px">
@@ -218,7 +242,7 @@
             <tr>
                 <td>
                     <div class="center-div">
-                        <img class="round" style="width:1000" src="./resources/image/offline_stage.png">
+                        <img class="round" style="width:1000" src="./resources/image/pipeline.png">
                     </div>
                 </td>
             </tr>
@@ -226,13 +250,11 @@
                 <td>
                     <div class="center-div">
                         <span style="font-size:14px">
-                            Offline stage to learn hand and object models. Top: Hand model. 
-                            Each sampling point on the ray is converted to the local coordinate 
-                            system of each hand part through bone transformation. Then we encode
-                            the point into embedding vectors and feed it to hand model to get the 
-                            SDF and color value. Bottom: Object model. We convert the sampling 
-                            point to the model coordinate with the object pose, and get the SDF 
-                            and color value. 
+                            Overview of our data augmentation framework for bimanual hand-object interaction. Based on the original dataset,
+                            we first establish mesh-based 3DGS models and input the original poses to pose optimization module to expand the diversity
+                            of interaction. The novel pose and 3DGS can be combined to render the low-quality image, which is then fed into the super
+                            resolution module to further enhance the realism. Based on the above modules, we can automatically build an expanded dataset
+                            and support model fine-tuning for the interaction understanding baseline to improve performance.
                         </span>
                     </div>
                 </td>
@@ -245,7 +267,7 @@
             <tr>
                 <td>
                     <div class="center-div">
-                        <img class="round" style="width:1000" src="./resources/image/online_stage.png">
+                        <img class="round" style="width:600" src="./resources/image/hogs_aug.png">
                     </div>
                 </td>
             </tr>
@@ -253,10 +275,31 @@
                 <td>
                     <div class="center-div">
                         <span style="font-size:14px">
-                            Online stage for joint model fitting. We utilize hand/object pose 
-                            estimation networks for initialization, and refine pose with
-                            single-frame based loss function for single frame and video-based loss function 
-                            for video sequence. 
+                            Examples of our HOGSA, which contains diverse
+                            interactive poses and ensures the realism of the images.
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table align="center" width="1000px">
+        <tbody>
+            <tr>
+                <td>
+                    <div class="center-div">
+                        <img class="round" style="width:600" src="./resources/image/hogs_aug_with_bg.png">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="center-div">
+                        <span style="font-size:14px">
+                            The augmented data we used to train the baseline.
+                            Compared with the original data, our images ensure realism
+                            and have various poses.
                         </span>
                     </div>
                 </td>
@@ -275,20 +318,21 @@
         <tbody>
             <tr>
                 <td>
-                    <img class="layered-paper-big" style="height:175px" src="./resources/image/paper1.png">
+                    <img class="layered-paper-big" style="height:175px" src="./resources/image/pape1_1.png">
                 </td>
                 <td>
-                    <span style="font-size:14pt">W. Qu, Z. Cui, Y. Zhang, C. Meng, C. Ma, X. Deng, H. Wang</span>
+                    <span style="font-size:14pt">W. Qu, J. Li, J. Cheng, J. Shi, C. Meng, C. Ma, H. Wang, X. Deng, Y. Zhang</span>
                     <br><br>
-                    <b><span style="display:inline-block;width:600px;font-size:14pt">Novel-view Synthesis and Pose Estimation for Hand-Object Interaction from Sparse Views.</span></b>
+                    <b><span style="display:inline-block;width:600px;font-size:14pt">HOGSA:Bimanual Hand-Object Interaction Understanding with 3D Gaussian
+                        Splatting Based Data Augmentation</span></b>
                     <br><br>
-                    <span style="font-size:14pt">ICCV, 2023.</span>
+                    <span style="font-size:14pt">AAAI, 2025.</span>
                     <br><br>
                     <span style="font-size:20px">
-                        <a href="https://arxiv.org/abs/2308.11198">[Paper]</a> &nbsp; &nbsp;
-                        <a href="./resources/bibtex.txt">[Bibtex]</a> &nbsp; &nbsp; 
-                        <a href="https://github.com/iscas3dv/HO-NeRF">[Code]</a> &nbsp; &nbsp;
-                        <a href="https://github.com/iscas3dv/HO-NeRF">[Dataset]</a> &nbsp; &nbsp;
+                        <a href="https://arxiv.org/abs/2501.02845">[Paper]</a> &nbsp; &nbsp;
+                        <!-- <a href="./resources/bibtex.txt">[Bibtex]</a> &nbsp; &nbsp;  -->
+                        <a href="https://iscas3dv.github.io/HOGSA/">[Code, Coming Soon]</a> &nbsp; &nbsp;
+                        <a href="https://iscas3dv.github.io/HOGSA/">[Dataset, Coming Soon]</a> &nbsp; &nbsp;
                     </span>
                 </td>
             </tr>
@@ -306,7 +350,7 @@
             <tr>
                 <td>
                     <div class="center-div">
-                        <img class="round" style="width:1000" src="./resources/image/img_4.png">
+                        <img class="round" style="width:1000" src="./resources/image/comparison.png">
                     </div>
                 </td>
             </tr>
@@ -314,8 +358,8 @@
                 <td>
                     <div class="center-div">
                         <span style="font-size:14px">
-                            Novel view synthesis and reconstruction of hand and hand-object interaction scenes. 
-                            Our models contain realistic appearance and geometry details and can achieve full 360 degree free-viewpoint rendering.
+                            Qualitative results of our data augmentation method HOGSA on the baseline. After optimization, the model can cover
+                            a wider range of interactive poses and achievea more accurate estimation of the pose and contact area.
                         </span>
                     </div>
                 </td>
@@ -328,7 +372,7 @@
             <tr>
                 <td>
                     <div class="center-div">
-                        <img class="round" style="width:1000" src="./resources/image/img_5.png">
+                        <img class="round" style="width:1000" src="./resources/image/rendering.png">
                     </div>
                 </td>
             </tr>
@@ -336,10 +380,8 @@
                 <td>
                     <div class="center-div">
                         <span style="font-size:14px">
-                            (a) Effect of pose optimization in online stage with joint model fitting. Optimization can 
-                            improve the pose accuracy. (b) Effect of interaction loss. Interaction loss can  facilitate 
-                            to achieve reasonable hand-object interaction. (c) Editing of hand-object interaction scenes. 
-                            We can replace the hand, object models and change the poses to get realistic rendering results.
+                            Ablation study on SRM. After using SRM, the realism of the image rendered by HOGS is significantly improved,
+                            especially the texture details of the object. This greatly reduces the gap between synthetic and real data..
                         </span>
                     </div>
                 </td>
@@ -358,7 +400,15 @@
                             <h1>Acknowledgements</h1>
                         </div>
                         <div class="center-div">
-                            This work was supported in part by National Key R&D Program of China (2022ZD0117900).
+                            This work was supported in part by National Science and
+                            Technology Major Project (2022ZD0119404), National Nat
+                           ural Science Foundation of China (62473356,62373061),
+                            Beijing Natural Science Foundation (L232028), CAS Major
+                            Project (RCJJ-145-24-14), Science and Technology Innova
+                           tion Key R&D Program of Chongqing (CSTB2023TIAD
+                           STX0027), and Beijing Hospitals Authority Clinical
+                            Medicine Development of Special Funding Support No.
+                            ZLRK202330.
                             The websiteis modified from this <a href="https://yqdch.github.io/DHSP3D/">template</a>.
                         </div>
                     </left>
@@ -366,7 +416,7 @@
             </tr>
         </tbody>
     </table>
-    <br> -->
+    <br>
 
 
 
