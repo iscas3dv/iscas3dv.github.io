@@ -15,38 +15,38 @@
         <span style="font-size:40px">Universal Features Guided Zero-Shot Category-Level Object Pose Estimation</span>
     </div>
 
-    <!-- <br>
+    <br>
     <table align="center" width="1100px">
         <tbody>
             <tr>
                 <td align="center" width="150px">
                     <div class="center-div">
                         <span style="font-size:22px">
-                            Wentian Qu<sup>1,2</sup>
+                            Wentian Qu<sup>1,2,3</sup>
                         </span>
                     </div>
                 </td>
-
-                <td align="center" width="150px">
-                    <div class="center-div">
-                        <span style="font-size:22px">
-                            <a href="https://zhpcui.github.io/">Zhaopeng Cui</a><sup>3</sup>
-                        </span>
-                    </div>
-                </td>
-
-                <td align="center" width="150px">
-                    <div class="center-div">
-                        <span style="font-size:22px">
-                            <a href="https://www.zhangyinda.com/">Yinda Zhang</a><sup>4</sup>
-                        </span>
-                    </div>
-                </td>
-
+                
                 <td align="center" width="150px">
                     <div class="center-div">
                         <span style="font-size:22px">
                             Chenyu Meng<sup>1,2</sup>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            Heng Li<sup>3</sup>
+                        </span>
+                    </div>
+                </td>
+                
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            Jian Cheng<sup>1,2</sup>
                         </span>
                     </div>
                 </td>
@@ -58,7 +58,6 @@
                         </span>
                     </div>
                 </td>
-               
 
             </tr>
         </tbody>
@@ -67,7 +66,23 @@
 
     <table align="center" width="800px">
         <tbody>
-                            
+            
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            Hongan Wang<sup>1,2</sup>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            Xiao Zhou<sup>4</sup>
+                        </span>
+                    </div>
+                </td>
+
                 <td align="center" width="150px">
                     <div class="center-div">
                         <span style="font-size:22px">
@@ -75,13 +90,17 @@
                         </span>
                     </div>
                 </td>
+
                 <td align="center" width="150px">
                     <div class="center-div">
                         <span style="font-size:22px">
-                            Hongan Wang<sup>1,2</sup>*
+                            <a href="https://ece.hkust.edu.hk/pingtan">Ping Tan</a><sup>3</sup>*
                         </span>
                     </div>
                 </td>
+
+                
+
             </tr>
         </tbody>
     </table>
@@ -116,7 +135,7 @@
                 <td align="center" width="150px">
                     <div class="center-div">
                         <span style="font-size:22px">
-                            <sup>3</sup>State Key Lab of CAD&CG, Zhejiang University</a>
+                            <sup>3</sup>Hong Kong University of Science and Technology</a>
                         </span>
                     </div>
                 </td>
@@ -124,7 +143,7 @@
                 <td align="center" width="150px">
                     <div class="center-div">
                         <span style="font-size:22px">
-                            <sup>4</sup>Google</a>
+                            <sup>4</sup>Aerospace Information Research Institute, Chinese Academy of Sciences</a>
                         </span>
                     </div>
                 </td>
@@ -138,7 +157,7 @@
             <tr>
                 <td align="center" width="150px">
                     <div class="center-div">
-                        <img src="./resources/image/tearser.png" width="1100px"></a><br>
+                        <img src="./resources/image/teaser.png" width="1100px"></a><br>
                     </div>
                 </td>
             </tr>
@@ -146,10 +165,10 @@
                 <td align="center" width="150px">
                     <div class="center-div">
                         <span style="font-size:14px">
-                            We propose a neural rendering and pose estimation system for hand-object interaction using sparse view images. 
-                            (a) During offline stage, we learn hand and object models that enable rendering and shape reconstruction. During online 
-                            stage, we initialize the pose from sparse camera views (b), and then conduct online fitting to improve pose estimation, which 
-                            enables photo-realistic free viewpoint rendering (c). Our framework also naturally supports hand object interaction editing.
+                            (a) We propose a zero-shot pose estimation method for unseen categories using universal features and obtain accurate
+                            results for multi-category scenes. Our method offers cost-efficient and superior generalization ability over traditional instance
+                           level and category-level methods. (b) The correspondence with universal features degrades when pose has large gaps. (c) The
+                            shape gap between objects will cause pose ambiguity in optimization. These challenges affect the accuracy of pose estimation.
                         </span>
                     </div>
                 </td>
@@ -163,42 +182,25 @@
         <h1>Abstract</h1>
     </div>
     <p>
-        Hand-object interaction understanding and the barely 
-        addressed novel view synthesis are highly desired in the 
-        immersive communication, whereas it is challenging due to 
-        the high deformation of hand and heavy occlusions between 
-        handandobject. Inthispaper, we propose a neural rendering 
-        and pose estimation system for hand-object interaction 
-        from sparse views, which can also enable 3D hand-object 
-        interaction editing. We share the inspiration from recent 
-        scene understanding work that shows a scene specific model
-        built beforehand can significantly improve and unblock vision 
-        tasks especially when inputs are sparse, and extend it 
-        to the dynamic hand-object interaction scenario and propose 
-        to solve the problem in two stages. We first learn 
-        the shape and appearance prior knowledge of hands and 
-        objects separately with the neural representation at the 
-        offline stage. During the online stage, we design a rendering 
-        based joint model fitting framework to understand the 
-        dynamic hand-object interaction with the pre-built hand and 
-        object models as well as interaction priors, which thereby 
-        overcomes penetration and separation issues between hand 
-        and object and also enables novel view synthesis. In order 
-        to get stable contact during the hand-object interaction 
-        process in a sequence, we propose a stable contact loss 
-        to make the contact region to be consistent. Experiments 
-        demonstrate that our method outperforms the state-of-the art 
-        methods.
+        Object pose estimation, crucial in computer vision and
+        robotics applications, faces challenges with the diversity of
+        unseen categories. We propose a zero-shot method to achieve
+        category-level 6-DOF object pose estimation, which exploits
+        both 2D and 3D universal features of input RGB-D image to 
+        establish semantic similarity-based correspondences
+        and can be extended to unseen categories without additional
+        model fine-tuning. Our method begins with combining efficient 
+        2D universal features to find sparse correspondences
+        between intra-category objects and gets initial coarse pose.
+        To handle the correspondence degradation of 2D universal
+        features if the pose deviates much from the target pose, we
+        use an iterative strategy to optimize the pose. Subsequently,
+        to resolve pose ambiguities due to shape differences between
+        intra-category objects, the coarse pose is refined by optimizing 
+        with dense alignment constraint of 3D universal features.
+        Our method outperforms previous methods on the REAL275
+        and Wild6D benchmarks for unseen categories.
     </p>
-    <br><br>
-
-    <hr>
-    <div class="center-div">
-        <h1>Video</h1>
-    </div>
-    <div class="center-div">
-    <iframe src="https://player.bilibili.com/player.html?aid=914990670&bvid=BV19u4y1v7ft&cid=1238626071&p=1" width="1000px" height="600px" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-    </div>
     <br><br>
 
     <hr>
@@ -207,10 +209,33 @@
     </div>
 
     <p>
-        Given sparse-view observations of hand-object interaction, 
-        we aim to generate free-viewpoint synthesis of the scene and 
-        estimate hand skeleton pose and object 6D pose. Our framework 
-        is divided into two stages: offline model building and online model fitting. 
+        We exploits multi-modal (both 2D and 3D) universal
+        features to estimate object pose on unseen categories.
+        We design a coarse-to-fine framework for accurate 
+        6-DOF pose estimation. At the coarse stage, it identifies 
+        sparse correspondences to solve an initial coarse 
+        object pose. Given an input RGB-D image, we use a reference 
+        model of the interested category to render reference
+        images and extract 2D universal features from both the target 
+        and rendered reference images. We then calculate the cosine 
+        similarity map between the 2D features and use cyclical
+        distance to select Top-k correspondences. Combined with
+        the depth map and camera intrinsics, we choose the Top-k
+        keypoints in the camera coordinate and calculate the transformation 
+        from the reference to the target space to get the
+        initial coarse 6-DOF object pose by a least-squares solution.
+        To deal with the problem of feature correspondence degradation 
+        of 2D universal features if the initial pose deviates much
+        from the target pose, we use an iterative strategy to optimize 
+        the correspondence and coarse pose. After the coarse
+         pose estimation, we map the reference model to the target
+         image space to perform pose refinement with pixel-wise optimization. 
+         In order to resolve pose ambiguities due to shape
+         differences between intra-category objects during the optimization, 
+         we employ 3D universal features extracted from
+         the point cloud to refine the 6-DOF object pose and the reference 
+         model iteratively by dense pixel-level registration.
+
     </p>
 
     <table align="center" width="1000px">
@@ -218,7 +243,7 @@
             <tr>
                 <td>
                     <div class="center-div">
-                        <img class="round" style="width:1000" src="./resources/image/offline_stage.png">
+                        <img class="round" style="width:1000" src="./resources/image/pipeline.png">
                     </div>
                 </td>
             </tr>
@@ -226,13 +251,10 @@
                 <td>
                     <div class="center-div">
                         <span style="font-size:14px">
-                            Offline stage to learn hand and object models. Top: Hand model. 
-                            Each sampling point on the ray is converted to the local coordinate 
-                            system of each hand part through bone transformation. Then we encode
-                            the point into embedding vectors and feed it to hand model to get the 
-                            SDF and color value. Bottom: Object model. We convert the sampling 
-                            point to the model coordinate with the object pose, and get the SDF 
-                            and color value. 
+                            Overview. Our framework includes a keypoint-level coarse pose estimation module and a pixel-level pose refinement
+                            module. In the first module, we establish the correspondences between image pairs based on the 2D universal features and
+                            calculate the coarse pose using least squares in an iterative manner. In the second module, we use pixel-level optimization
+                            combined with 3D universal features to refine the pose and shape of reference model to obtain the fine pose.
                         </span>
                     </div>
                 </td>
@@ -245,7 +267,7 @@
             <tr>
                 <td>
                     <div class="center-div">
-                        <img class="round" style="width:1000" src="./resources/image/online_stage.png">
+                        <img class="round" style="width:500" src="./resources/image/pose_refine.png">
                     </div>
                 </td>
             </tr>
@@ -253,10 +275,13 @@
                 <td>
                     <div class="center-div">
                         <span style="font-size:14px">
-                            Online stage for joint model fitting. We utilize hand/object pose 
-                            estimation networks for initialization, and refine pose with
-                            single-frame based loss function for single frame and video-based loss function 
-                            for video sequence. 
+                            (a) Pose Refinement. Based on the coarse pose as
+                            initialization, the reference model can be warped to the 
+                            target space to obtain the initial mask and extract 3D 
+                            universal features. Then we optimize the coarse pose and shape
+                            by minimizing the loss function. (b) After pose refinement
+                            stage, the pose and shape of the reference model are more
+                            accurately aligned with the target object. 
                         </span>
                     </div>
                 </td>
@@ -275,20 +300,19 @@
         <tbody>
             <tr>
                 <td>
-                    <img class="layered-paper-big" style="height:175px" src="./resources/image/paper1.png">
+                    <img class="layered-paper-big" style="height:175px" src="./resources/image/page1.png">
                 </td>
                 <td>
-                    <span style="font-size:14pt">W. Qu, Z. Cui, Y. Zhang, C. Meng, C. Ma, X. Deng, H. Wang</span>
+                    <span style="font-size:14pt">W. Qu, C. Meng, H. Li, J. Cheng, C. Ma, H. Wang, X. Zhou, X. Deng, P. Tan</span>
                     <br><br>
-                    <b><span style="display:inline-block;width:600px;font-size:14pt">Novel-view Synthesis and Pose Estimation for Hand-Object Interaction from Sparse Views.</span></b>
+                    <b><span style="display:inline-block;width:600px;font-size:14pt">Universal Features Guided Zero-Shot Category-Level Object Pose Estimation</span></b>
                     <br><br>
-                    <span style="font-size:14pt">ICCV, 2023.</span>
+                    <span style="font-size:14pt">AAAI, 2025</span>
                     <br><br>
                     <span style="font-size:20px">
-                        <a href="https://arxiv.org/abs/2308.11198">[Paper]</a> &nbsp; &nbsp;
-                        <a href="./resources/bibtex.txt">[Bibtex]</a> &nbsp; &nbsp; 
-                        <a href="https://github.com/iscas3dv/HO-NeRF">[Code]</a> &nbsp; &nbsp;
-                        <a href="https://github.com/iscas3dv/HO-NeRF">[Dataset]</a> &nbsp; &nbsp;
+                        <a href="https://arxiv.org/html/2501.02831v1">[Paper]</a> &nbsp; &nbsp;
+                        <!-- <a href="./resources/bibtex.txt">[Bibtex]</a> &nbsp; &nbsp;  -->
+                        <a href="https://iscas3dv.github.io/universal6dpose/">[Code, Coming Soon]</a> &nbsp; &nbsp;
                     </span>
                 </td>
             </tr>
@@ -306,7 +330,7 @@
             <tr>
                 <td>
                     <div class="center-div">
-                        <img class="round" style="width:1000" src="./resources/image/img_4.png">
+                        <img class="round" style="width:1000" src="./resources/image/qual_res.png">
                     </div>
                 </td>
             </tr>
@@ -314,8 +338,10 @@
                 <td>
                     <div class="center-div">
                         <span style="font-size:14px">
-                            Novel view synthesis and reconstruction of hand and hand-object interaction scenes. 
-                            Our models contain realistic appearance and geometry details and can achieve full 360 degree free-viewpoint rendering.
+                            Qualitative results on REAL275 and Wild6D. The red box represents the ground truth, 
+                            and the green box represents the estimation. Previous methods exhibit large errors 
+                            when applied to unseen categories due to the significant texture and shape differences. 
+                            Our method demonstrates strong generalization on unseen categories with accurate pose estimation.
                         </span>
                     </div>
                 </td>
@@ -323,29 +349,7 @@
         </tbody>
     </table>
 
-    <table align="center" width="1000px">
-        <tbody>
-            <tr>
-                <td>
-                    <div class="center-div">
-                        <img class="round" style="width:1000" src="./resources/image/img_5.png">
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="center-div">
-                        <span style="font-size:14px">
-                            (a) Effect of pose optimization in online stage with joint model fitting. Optimization can 
-                            improve the pose accuracy. (b) Effect of interaction loss. Interaction loss can  facilitate 
-                            to achieve reasonable hand-object interaction. (c) Editing of hand-object interaction scenes. 
-                            We can replace the hand, object models and change the poses to get realistic rendering results.
-                        </span>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    
     
     <br><br>
     <hr>
@@ -358,7 +362,10 @@
                             <h1>Acknowledgements</h1>
                         </div>
                         <div class="center-div">
-                            This work was supported in part by National Key R&D Program of China (2022ZD0117900).
+                            This work was supported in part by National Science and Technology Major Project (2022ZD0117904), 
+                            National Nat-ural Science Foundation of China (62473356,62373061), Beijing Natural Science Foundation (L232028), 
+                            and CAS Major Project (RCJJ-145-24-14). Heng Li and Ping Tan are supported by the project HKPC22EG01-E from the 
+                            Hong Kong Industrial Artificial Intelligence & Robotics Centre (FLAIR).
                             The websiteis modified from this <a href="https://yqdch.github.io/DHSP3D/">template</a>.
                         </div>
                     </left>
@@ -366,7 +373,7 @@
             </tr>
         </tbody>
     </table>
-    <br> -->
+    <br>
 
 
 
