@@ -1,0 +1,278 @@
+<html>
+
+<head>
+    <link rel="StyleSheet" href="style.css" type="text/css" media="all">
+    <title>Efficient Virtual View Selection for 3D Hand Pose Estimation</title>
+    <meta property="og:title" content="Gesture Builder: Flexible Gesture Customization and Efficient Recognition on VR Devices">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+<body>
+    <br>
+    <div class="center-div">
+        <span style="font-size:40px">Gesture Builder: Flexible Gesture Customization and Efficient Recognition on VR Devices</span>
+    </div>
+
+    <br>
+    <table align="center" width="900px">
+        <tbody>
+            <tr>
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            Yang Zou<sup>1,2</sup>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="180px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            Yanguang Wan<sup>1,2</sup>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="200px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            Yonghao Zhang<sup>1,2</sup>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <a href="https://people.ucas.ac.cn/~zhouxiao">Xiao Zhou</a><sup>3</sup>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            Jian Cheng<sup>1,2</sup>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <table align="center" width="800px">
+        <tbody>
+            <tr>
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <a href="https://people.ucas.edu.cn/~0010686">Cuixia Ma</a><sup>1</sup>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <a href="https://pi.cs.tsinghua.edu.cn/lab/people/ChunYu/">Chun Yu</a><sup>4</sup>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <a href="http://www.idengxm.com/">Xiaoming Deng</a><sup>1†</sup>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <a href="https://people.ucas.ac.cn/http:/people.ucas.ac.cn/~hongan">Hongan Wang</a><sup>1†</sup>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+
+    <table align="center" width="1100px">
+        <tbody>
+            <tr>
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <sup>1</sup><a href="http://www.iscas.ac.cn/">Institute of Software, Chinese Academy of Sciences</a>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <sup>2</sup><a href="https://www.ucas.ac.cn/">University of Chinese Academy of Sciences</a>
+                        </span>
+                    </div>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <table align="center" width="1100px">
+        <tbody>
+            <tr>
+                <td align="center" width="600px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <sup>3</sup><a href="http://www.aircas.cas.cn/">Aerospace Information Research Institute, Chinese Academy of Sciences</a>
+                        </span>
+                    </div>
+                </td>
+
+                <td align="center" width="150px">
+                    <div class="center-div">
+                        <span style="font-size:22px">
+                            <sup>4</sup><a href="https://www.tsinghua.edu.cn/">Tsinghua University</a>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <table align="center" width="600px">
+        <tbody>
+            <tr>
+                <td>
+                    <div class="center-div">
+                        <img src="./resources/images/new-pipeline.png" width="1000px"></a><br>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="center-div">
+                        <span style="font-size:14px">
+                            Overview of Gesture Builder framework. 
+                            We decompose dynamic gestures into sequences of static postures and wrist trajectories. 
+                            In the offline phase, we pre-train an unsupervised clustering model on a large-scale dataset to reconstruct posture templates. 
+                            During the customization process, we begin by identifying the reconstructed posture template most similar to the static posture of each frame and assigning the corresponding latent label to that frame. 
+                            In this way, input 3D hand joint sequences are converted to latent label sequences, which are then used to construct a sequence pattern. 
+                            Simultaneously, wrist positions are stored as wrist trajectory templates. In the inference phase, the latent label of the current frame is obtained in the same manner as during the customization process. 
+                            Then we match it against sequence patterns frame by frame. Once a sequence pattern is successfully matched, we compare the wrist trajectory with corresponding trajectory templates, ultimately recognizing the dynamic gesture.
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br>
+
+    <hr>
+    <div class="center-div">
+        <h1>Abstract</h1>
+    </div>
+    <p>
+        In the realm of VR/MR interactions, gestures serve as a critical bridge between users and interfaces, with custom gestures enhancing creativity and providing a personalized immersive experience.
+        We introduce a novel gesture definition and recognition framework that allows users to customize a wide array of gestures by demonstrating them just three times. 
+        A major challenge lies in effectively representing gestures computationally. 
+        To address this, we have pre-trained a hand posture representation model using a Vector Quantized Variational Autoencoder (VQ-VAE) with a codebook of adaptive size, 
+        allowing hand postures defined by 23 joint positions of the hand to be projected into a latent space. In this space, different postures are formed into clusters, 
+        and a testing posture can be assigned to a cluster by a specific distance metric. The dynamic gestures are then represented as sequences of discrete hand postures and wrist positions. 
+        Employing a straightforward sequence matching algorithm, our framework achieves highly efficient recognition with minimal computational demands. 
+        We evaluated this system through a user study that includes 16 pre-defined gestures and 106 user-defined gestures. 
+        The results confirm that our system can provide robust real-time gesture recognition and effectively supports the customization of gestures according to user preferences. 
+        Our approach surpasses previous methods by enhancing gesture diversity and reducing constraints on gesture customization.
+    </p>
+    <br><br>
+
+    <hr>
+    <div class="center-div">
+        <h1 id="paper">Paper and Code</h1>
+    </div>
+    <table align="center" width="900px">
+
+        <tbody>
+            <tr>
+                <td>
+                    <img class="layered-paper-big" style="height:175px" src="./resources/images/page1.png">
+                </td>
+                <td>
+                    <span style="font-size:14pt">Y. Zou, Y. Wan, Y. Zhang, X. Zhou, J. Cheng, C. Ma, C. Yu, X. Deng, H. Wang</span>
+                    <br><br>
+                    <b><span style="display:inline-block;width:600px;font-size:14pt">Gesture Builder: Flexible Gesture Customization and Efficient Recognition on VR Devices.</span></b>
+                    <br><br>
+                    <span style="font-size:14pt">Ubicomp, 2025.</span>
+                    <br><br>
+                    <span style="font-size:20px">
+                        <a href="https://arxiv.org/abs/2203.15458">[Paper]</a> &nbsp; &nbsp;
+                        <a href="./resources/bibtex.txt">[Bibtex]</a> &nbsp; &nbsp; 
+                        <a href="https://github.com/iscas3dv/GestureBuilder">[Dataset]</a> &nbsp; &nbsp;
+                        <a href="https://github.com/iscas3dv/GestureBuilder">[Code]</a> &nbsp; &nbsp;
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br>
+
+    <!-- <hr>
+    <div class="center-div">
+        <h1 id="code">Results</h1>
+        <br>
+        <table align="center" width="900px">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="center-div">
+                            <img src="./resources/images/vqvae-tsne-new-model.png" width="800px"></a><br>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="center-div">
+                            <span style="font-size:14px">
+                                t-SNE visualization of the latent codes of the test set. We can observe that 27 classes were clustered, which exactly matches the 27 distinct postures contained in our dataset.
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br>
+    </div>
+     -->
+    
+    <br><br>
+    <hr>
+    <table align="center" width="1000px">
+        <tbody>
+            <tr>
+                <td>
+                    <left>
+                        <div class="center-div">
+                            <h1>Acknowledgements</h1>
+                        </div>
+                        <div class="center-div">
+                            This work was supported in part by National Science and Technology Major Project (2022ZD0117904), National Natural Science Foundation of China (62473356,62373061), Beijing Natural Science Foundation (L232028), CAS Major Project (RCJJ-145-24-14),  Science and Technology Innovation Key R\&D Program of Chongqing (CSTB2023TIAD-STX0027), and Beijing Hospitals Authority Clinical Medicine Development of Special Funding Support No. ZLRK202330. We express our gratitude to the reviewers for their valuable comments and insights. Our sincere thanks go to all participants who actively contributed to the data collection and the user comparative study. Special thanks to Chenyu Meng, Wentian Qu, Zeyuan Huang, Chen Ju, Qiming Zhu, and all who dedicated their efforts and offered valuable feedback throughout the entire process.
+                            The websiteis modified from this <a href="https://yqdch.github.io/DHSP3D/">template</a>.
+                        </div>
+                    </left>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+
+
+
+</body>
+
+</html>

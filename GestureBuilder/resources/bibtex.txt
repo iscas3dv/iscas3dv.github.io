@@ -1,0 +1,6 @@
+@inproceedings{Cheng2022virtualview,
+      title={Efficient Virtual View Selection for 3D Hand Pose Estimation}, 
+      author={Jian Cheng, Yanguang Wan, Dexin Zuo, Cuixia Ma, Jian Gu, Ping Tan, Hongan Wang, Xiaoming Deng, Yinda Zhang}, 
+      booktitle={AAAI Conference on Artificial Intelligence (AAAI)}, 
+      year={2022} 
+} 
